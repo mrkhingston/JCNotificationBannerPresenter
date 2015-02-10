@@ -33,8 +33,10 @@ const CGFloat kJCNotificationBannerViewMarginY = 5.0;
     self.titleLabel.textColor = [UIColor lightTextColor];
     self.titleLabel.backgroundColor = [UIColor clearColor];
     [self addSubview:self.titleLabel];
+      
+    BOOL hasTitle = notificationBanner ? (notificationBanner.title.length > 0) : NO;
     self.messageLabel = [UILabel new];
-    self.messageLabel.font = [UIFont systemFontOfSize:14];
+    self.messageLabel.font = [UIFont systemFontOfSize:hasTitle ? 14 : 16];
     self.messageLabel.textColor = [UIColor lightTextColor];
     self.messageLabel.backgroundColor = [UIColor clearColor];
     self.messageLabel.numberOfLines = 0;
